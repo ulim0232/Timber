@@ -9,9 +9,11 @@
 #include "Tree.h"
 
 #include "Player.h"
+#include "GameManager.h"
 
 int main()
 {
+    GameManager manager;
     bool isPause = true; //일시정지
     int score = 0;
 
@@ -20,6 +22,9 @@ int main()
 
     /*폰트를 를 활용해서 화면에 글씨를 적어보기*/
     /*----시작 메시지 설정----*/
+    sf::Text textMassage;
+    manager.SetText(textMassage, "PRESS ENTER TO START", 75, sf::Color::White, Origins::MC, screenWidth * 0.5f, screenHeight * 0.5f);
+
     sf::Font font;
     font.loadFromFile("fonts/KOMIKAP_.ttf");  //"~"경로에서 폰트 파일 가져오기
     sf::Text textMassage;
